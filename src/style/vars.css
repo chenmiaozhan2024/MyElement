@@ -1,0 +1,115 @@
+:root{
+  --vk-color-white:#ffffff;
+  --vk-color-black:#000000;
+  --vk-color-primary:#409eff;
+
+  /* 主色调的浅色系变体 */
+  --vk-color-primary-light-3: #79bbff;
+  --vk-color-primary-light-5: #a0cfff;
+  --vk-color-primary-light-7: #c6e2ff;
+  --vk-color-primary-light-8: #d9ecff;
+  --vk-color-primary-light-9: #ecf5ff;
+  --vk-color-primary-dark-2: #337ecc;
+
+  /* 成功色系 */
+  --vk-color-success:#67c23a;
+  --vk-color-success-light-3: #95d475;
+  --vk-color-success-light-5: #b3e19d;
+  --vk-color-success-light-7: #d1edc4;
+  --vk-color-success-light-8: #e1f3d8;
+  --vk-color-success-light-9: #f0f9eb;
+  --vk-color-success-dark-2: #529b2e;
+
+  /* 警告色系 */
+  --vk-color-warning: #e6a23c; /* 警告主色 */
+  --vk-color-warning-light-3: #eebc77;
+  --vk-color-warning-light-5: #f3d19e;
+  --vk-color-warning-light-7: #f8e3c5;
+  --vk-color-warning-light-8: #faecdd;
+  --vk-color-warning-light-9: #fdf6ec;
+  --vk-color-warning-dark-2: #88230;
+
+  /* 危险色系 */
+  --vk-color-danger: #f56c6c; /* 危险主色 */
+  --vk-color-danger-light-3: #f89898;
+  --vk-color-danger-light-5: #fab6b6;
+  --vk-color-danger-light-7: #fcd3d3;
+  --vk-color-danger-light-8: #fde2e2;
+  --vk-color-danger-light-9: #fef0f0;
+  --vk-color-danger-dark-2: #c45656;
+
+  /*信息*/
+  --vk-color-info: #909399; /* 信息主色 */
+  --vk-color-info-light-3: #b1b3b8;
+  --vk-color-info-light-5: #c8c9cc;
+  --vk-color-info-light-7: #dedfe0;
+  --vk-color-info-light-8: #e9e9eb;
+  --vk-color-info-light-9: #f4f4f5;
+  --vk-color-info-dark-2: #73767a;
+
+  /* 背景类 */
+  --vk-bg-color:#fff;
+  --vk-bg-color-page: #f2f3f5; /* 页面背景色 */
+  --vk-bg-color-overlay: #ffffff; /* 浮层背景色 */
+
+  /* 文字类 */
+  --vk-text-color-primary: #303133; /* 主文本色（标题） */
+  --vk-text-color-regular: #606266; /* 常规文本色（正文） */
+  --vk-text-color-secondary: #909399; /* 辅助文本色 */
+  --vk-text-color-placeholder: #a8abb2; /* 占位符文本色 */
+  --vk-text-color-disabled: #c0c4cc; /* 禁用状态文本色 */
+
+  /* 边框类 */
+  --vk-border-color: #dcdfe6; /* 基础边框色 */
+  --vk-border-color-light: #e4e7ed; /* 浅色边框色 */
+  --vk-border-color-lighter: #ebeef5; /* 更浅色边框色 */
+  --vk-border-color-extra-light: #f2f6fc; /* 极浅色边框色 */
+  --vk-border-color-dark: #d4d7de; /* 深色边框色 */
+  --vk-border-color-darker: #cdd0d6; /* 更深色边框色 */
+
+  /* 填充类 */
+  --vk-fill-color: #f0f2f5; /* 基础填充色 */
+  --vk-fill-color-light: #f5f7fa; /* 浅色填充色 */
+  --vk-fill-color-lighter: #fafafa; /* 更浅色填充色 */
+  --vk-fill-color-extra-light: #fafcff; /* 极浅色填充色 */
+  --vk-fill-color-dark: #ebedf0; /* 深色填充色 */
+  --vk-fill-color-darker: #e6e8eb; /* 更深色填充色 */
+  --vk-fill-color-blank: #ffffff; /* 空白填充色（白色） */
+
+  /* 基础边框属性 */
+  --vk-border-width: 1px; /* 边框默认宽度 */
+  --vk-border-style: solid; /* 边框默认样式（实线） */
+  --vk-border-color-hover: var(--vk-text-color-disabled); /* 边框hover状态的颜色（复用文本禁用色） */
+
+  /* 复合边框变量（组合宽度、样式、颜色） */
+  --vk-border: var(--vk-border-width) var(--vk-border-style) var(--vk-border-color);
+
+  /* 边框圆角 */
+  --vk-border-radius-base: 4px; /* 基础圆角（通用组件如按钮、输入框） */
+  --vk-border-radius-small: 2px; /* 小尺寸圆角（小型组件） */
+  --vk-border-radius-round: 20px; /* 圆角（偏椭圆，如胶囊状按钮） */
+  --vk-border-radius-circle: 100%; /* 圆形圆角（圆形组件） */
+
+  /* 字体大小 */
+  --vk-font-size-extra-large: 20px; /* 超大号字体（大标题） */
+  --vk-font-size-large: 18px; /* 大号字体（次级标题） */
+  --vk-font-size-medium: 16px; /* 中号字体（重点正文） */
+  --vk-font-size-base: 14px; /* 基础字体（常规正文） */
+  --vk-font-size-small: 13px; /* 小号字体（辅助文字） */
+  --vk-font-size-extra-small: 12px; /* 超小字体（备注类文字） */
+
+  /* 字体族（跨平台兼容） */
+  --vk-font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+
+  /* 字体字重 */
+  --vk-font-weight-primary: 500; /* 核心文本的字重（中等加粗） */
+
+  /* 过渡动画 */
+  --vk-transition-duration: 0.3s; /* 过渡动画持续时间 */
+
+  /* 禁用状态的背景色：复用填充类的浅色 */
+  --vk-disabled-bg-color: var(--vk-fill-color-light);
+  /* 禁用状态的文本色：复用文本类的占位符色 */
+  --vk-disabled-text-color: var(--vk-text-color-placeholder);
+  /* 禁用状态的边框色：复用边框类的浅色 */
+}

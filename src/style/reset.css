@@ -1,0 +1,34 @@
+body {
+  /* 复用全局字体族变量，统一页面字体 */
+  font-family: var(--vk-font-family);
+  /* 文本字重（常规粗细） */
+  font-weight: 400;
+  /* 复用全局基础字号变量，统一页面默认字号 */
+  font-size: var(--vk-font-size-base);
+  /* 复用全局主文本色变量，统一页面默认文本颜色 */
+  color: var(--vk-text-color-primary);
+  /* 优化WebKit内核浏览器的文本抗锯齿效果，使文字更清晰 */
+  -webkit-font-smoothing: antialiased;
+  /* 优化Firefox在macOS下的文本显示效果 */
+  -moz-osx-font-smoothing: grayscale;
+  /* 消除移动端WebKit内核浏览器点击元素时的默认高亮背景 */
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  /* 链接默认颜色：复用全局主色调变量 */
+  color: var(--vk-color-primary);
+  /* 移除默认下划线，简化视觉 */
+  text-decoration: none;
+}
+
+/*  hover（ hover）、focus（获取焦点）状态 */
+a:hover,
+a:focus {
+  /* 颜色切换为主色调浅变体，增强交互反馈 */
+  color: var(--vk-color-primary-light-3);
+}
+
+/* active（点击激活）状态 */
+a:active {
+  /* 颜色切换为主色调深变体，强化点击时的视觉区分 */
+}
