@@ -19,5 +19,5 @@ export interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonE
     icon?: string,
     loading?: boolean,
     dashed?: boolean,
-    children: React.ReactNode
+    children?: React.ReactNode
 }

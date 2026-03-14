@@ -1,8 +1,8 @@
 import './MyButton.css'
 import type { ButtonProps } from './MyButton.ts'
-import className from 'classnames'
+import classNames from 'classnames'
 import React from 'react'
-
+import MyIcon from '../Icon/MyIcon.tsx'
 const MyButton = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const {
     type = 'Default',
@@ -15,19 +15,22 @@ const MyButton = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) =
     dashed = false,
     children,
     autoFocus,
-    NativeType,
+    NativeType='button',
+    className,
+    icon,
     ...rest // 收集其他原生属性
   } = props
 
-  const classes = className('my-button', {
+  const classes = classNames('my-button',className, {
     [`is-plain`]: plain,
     [`is-round`]: round,
     [`is-circle`]: circle,
-    [`is-disabled`]: disabled,
+    [`is-disabled`]: disabled||loading,
     [`is-loging`]: loading,
     [`is-dashed`]: dashed,
     [`my-button--${type}`]: type,
     [`my-button--${size}`]: size,
+    
   })
 
   return (
@@ -39,6 +42,8 @@ const MyButton = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) =
       autoFocus={autoFocus}
       {...rest} // 传递其他原生属性
     >
+      {loading&&<MyIcon name="loading" className='my-button__icon'></MyIcon>}
+      {!loading&&icon&& <MyIcon name={icon} className='my-button__icon'></MyIcon>}
       {children}
     </button>
   )

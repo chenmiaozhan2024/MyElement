@@ -1,4 +1,5 @@
 import MyButton from "./components/Button/MyButton.tsx"
+import MyIcon from './components/Icon/MyIcon.tsx'
 import {useRef} from "react"
 function App() {
  const buttonRef=useRef<HTMLButtonElement>(null)
@@ -9,7 +10,8 @@ function App() {
    
     <>
     <h1>MyElement组件演练</h1>
-    <MyButton type="Default" onClick={handleClick}   ref={buttonRef} >Default</MyButton>
+    <h2>MyButton组件演练</h2>
+    <MyButton type="Default" onClick={handleClick}   ref={buttonRef}>Default</MyButton>
     <MyButton type="primary">primary</MyButton>
     <MyButton type="success">success</MyButton>
     <MyButton type="info">info</MyButton>
@@ -36,6 +38,16 @@ function App() {
     <MyButton type="info"     dashed={true} >info</MyButton>
     <MyButton type="warning"  dashed={true} >warning</MyButton>
     <MyButton type="danger"   dashed={true} >danger</MyButton>
+    <div style={{ height: '20px' }}></div>
+    <MyButton icon="search"  circle={true}></MyButton>
+    <MyButton type="primary" icon="Edit"  circle={true}></MyButton>
+    <MyButton type="success" icon="Check"  circle={true}></MyButton>
+    <MyButton type="info" icon="Message"  circle={true}></MyButton>
+    <MyButton type="warning" icon="Star"  circle={true}></MyButton>
+    <MyButton type="danger" icon="Delete"  circle={true}></MyButton>
+    <h2 style={{ height: '50px' }}>MyIcon组件测试</h2>
+    <MyIcon name="search" size="30px"></MyIcon>
+    <MyIcon name="plus" color="#409eff" size="30px" />
     </>
   )
 }

@@ -290,3 +290,13 @@
   font-size: 12px;
   border-radius: calc(var(--vk-border-radius-base) - 1px);
 }
+.my-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px; /* 图标和文字间距 */
+}
+
+.my-button__icon {
+  font-size: 14px;
+}
