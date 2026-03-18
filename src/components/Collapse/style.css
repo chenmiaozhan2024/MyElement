@@ -1,0 +1,71 @@
+.my-collapse {
+  --my-collapse-border-color: var(--vk-border-color-light);
+  --my-collapse-header-height: 48px;
+  --my-collapse-header-bg-color: var(--vk-fill-color-blank);
+  --my-collapse-header-text-color: var(--vk-text-color-primary);
+  --my-collapse-header-font-size: 13px;
+  --my-collapse-content-bg-color: var(--vk-fill-color-blank);
+  --my-collapse-content-font-size: 13px;
+  --my-collapse-content-text-color: var(--vk-text-color-primary);
+  --my-collapse-disabled-text-color: var(--vk-disabled-text-color);
+  --my-collapse-disabled-border-color: var(--vk-border-color-lighter);
+  border-top: 1px solid var(--my-collapse-border-color);
+  border-bottom: 1px solid var(--my-collapse-border-color);
+}
+.my-collapse-item__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--my-collapse-header-height);
+  line-height: var(--my-collapse-header-height);
+  background-color: var(--my-collapse-header-bg-color);
+  color: var(--my-collapse-header-text-color);
+  cursor: pointer;
+  font-size: var(--my-collapse-header-font-size);
+  font-weight: 500;
+  transition: border-bottom-color var(--vk-transition-duration);
+  outline: none;
+  border-bottom: 1px solid var(--my-collapse-border-color);
+  &.is-disabled {
+    color: var(--my-collapse-disabled-text-color);
+    cursor: not-allowed;
+    background-image: none;
+  }
+  &.is-active {
+    border-bottom-color: transparent;
+    .header-angle {
+      transform: rotate(90deg);
+    }
+  }
+  .header-angle {
+    transition: transform var(--vk-transition-duration);
+  }
+}
+.my-collapse-item__arrow {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+  /* 默认状态：箭头向右 */
+  transform: rotate(0deg);
+}
+
+/* 当 header 处于激活状态时，箭头旋转 90 度（向下） */
+.my-collapse-item__header.is-active .my-collapse-item__arrow {
+  transform: rotate(90deg);
+}
+
+.my-collapse-item__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+  box-sizing: border-box;
+  background-color: var(--my-collapse-content-bg-color);
+  font-size: var(--my-collapse-content-font-size);
+  color: var(--my-collapse-content-text-color);
+  border-bottom: 1px solid var(--my-collapse-border-color);
+}
+
+.my-collapse-item__content.is-active {
+  max-height: 500px; /* 设置一个足够大的值 */
+}                              
+

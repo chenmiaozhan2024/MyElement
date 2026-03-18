@@ -1,13 +1,16 @@
 import MyButton from "./components/Button/MyButton.tsx"
 import MyIcon from './components/Icon/MyIcon.tsx'
-import {useRef} from "react"
+import MyCollapse from "./components/Collapse/Collapse.tsx"
+import MyCollapseItem from "./components/Collapse/MyCollapseItem.tsx"
+import {useRef, useState} from "react"
+import type { nameType } from "./components/Collapse/type.ts";
 function App() {
  const buttonRef=useRef<HTMLButtonElement>(null)
  const handleClick=()=>{
   console.log('我被点击了');
  }
+ const [openValue,setOpenValue]=useState<nameType[]>(["a"])
   return (
-   
     <>
     <h1>MyElement组件演练</h1>
     <h2>MyButton组件演练</h2>
@@ -48,7 +51,26 @@ function App() {
     <h2 style={{ height: '50px' }}>MyIcon组件测试</h2>
     <MyIcon name="search" size="30px"></MyIcon>
     <MyIcon name="plus" color="#409eff" size="30px" />
+    <h2 style={{ height: '50px' }}>MyCollapse组件测试</h2>
+    <MyCollapse modelValue={openValue}  onUpdateModelValue={setOpenValue} accordion={true}>
+      <MyCollapseItem name="a" titleSlot={<h1>nice title</h1>}>
+       <h1>headline title</h1>
+       <div>this is content a aaa</div>
+      </MyCollapseItem>
+      <MyCollapseItem name="b" title="nice title b item b">
+        <div>this is bbbb test</div>
+      </MyCollapseItem>
+      <MyCollapseItem 
+      name="c" 
+      title="nice cccc" 
+      disabled
+      >
+      <div>this is cccc test</div>
+    </MyCollapseItem>
+    </MyCollapse>
+
     </>
+    
   )
 }
 
