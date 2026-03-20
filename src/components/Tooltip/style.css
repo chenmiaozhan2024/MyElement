@@ -1,0 +1,17 @@
+.my-tooltip {
+  position: relative; /* 作为 Tooltip 的定位参考 */
+  display: inline-block;
+}
+
+.my-tooltip__popper {
+  position: absolute; /* 脱离文档流，不占据空间 */
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  pointer-events: none;
+  z-index: 1000; /* 确保 Tooltip 在最上层 */
+}
+
+.my-tooltip__popper.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
