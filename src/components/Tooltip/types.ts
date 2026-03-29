@@ -1,7 +1,7 @@
 import type { Placement,Options  } from "@popperjs/core";
 //TooltipProps 类型
 export interface TooltipProps{
-   content?: React.ReactNode;
+  content?: React.ReactNode;
   trigger?:'hover'|'click'//事件触发的类型
   placement?:Placement,
   tootipTrigger?:React.ReactNode
@@ -9,6 +9,8 @@ export interface TooltipProps{
   visibleChange?: (e:'visible-change',value:boolean)=>void;
   manual?:boolean//true 手动控制，false 自动控制
   popperOptionsType?:Partial<Options>
+  openDelay?:number//打开延迟
+  closeDelay?:number//关闭延迟
 }
 // Tooltip 方法
 export interface TooltipInstance{

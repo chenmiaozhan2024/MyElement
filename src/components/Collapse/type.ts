@@ -9,7 +9,7 @@ export interface CollapseItemProps{
 }
 export interface CollapseProps{
   children?: React.ReactNode,
-  modelValue?:nameType[]//默认打开
+  modelValue?:nameType[]//默认打开,记录那个是打开的
   accordion?:boolean//是否打开手风琴模式
   onUpdateModelValue?: (values: nameType[]) => void;
   onChange?: (values: nameType[]) => void;

@@ -5,32 +5,26 @@ import MyCollapseItem from "./components/Collapse/MyCollapseItem.tsx"
 import {useEffect, useRef, useState,} from "react"
 import {  createPopper } from "@popperjs/core"
 import type { nameType } from "./components/Collapse/type.ts";
-import Tooltip from "./components/Tooltip/Tooltip.tsx"
-import type { TooltipInstance } from "./components/Tooltip/types"
-import type { Options  } from "@popperjs/core";
-
+// import Tooltip from "./components/Tooltip/Tooltip.tsx"
+import Dropdown from "./components/Dropdown/Dropdown.tsx"
 function App() {
  const buttonRef=useRef<HTMLButtonElement>(null)
  const imgRef = useRef<HTMLImageElement>(null)
  const h1Ref = useRef<HTMLHeadingElement>(null)
- const tooltipRef = useRef<TooltipInstance>(null)
- const options:Partial<Options >={
-    placement:'bottom',
-    strategy:'fixed'
- }
+
  const handleClick=()=>{
   console.log('我被点击了');
  }
 
- const handleManualShow = () => {
-  // 手动显示 Tooltip
-  tooltipRef.current?.show()
- }
+//  const handleManualShow = () => {
+//   // 手动显示 Tooltip
+//   tooltipRef.current?.show()
+//  }
 
- const handleManualHide = () => {
-  // 手动隐藏 Tooltip
-  tooltipRef.current?.hide()
- }
+//  const handleManualHide = () => {
+//   // 手动隐藏 Tooltip
+//   tooltipRef.current?.hide()
+//  }
 
 useEffect(()=>{
   // ✅ 必须判断存在
@@ -48,6 +42,24 @@ useEffect(()=>{
     poper.destroy()
   }
 },[])
+const menuOptions=[ {
+  label: '选项一',
+  key: '1',
+}, {
+  label: '选项二',
+  key: '2',
+  divided: true,
+}, {
+  label: '选项三',
+  key: '3',
+  disabled: true,
+}, {
+  label: '选项四',
+  key: '4',
+}, {
+  label: '选项五',
+  key: '5',
+}];
  const [openValue,setOpenValue]=useState<nameType[]>(["a"])
   return (
     <>
@@ -58,17 +70,12 @@ useEffect(()=>{
     textAlign: 'center', /* 文字/图片居中 */
     width: '100%',      /* 占满父容器宽度 */
   }}>
-{/* @ts-expect-error Tooltip 组件使用 forwardRef，支持 ref 属性 */}
-<Tooltip content={<h1>hello world</h1>} trigger="click" manual ref={tooltipRef} popperOptionsType={options}>
+<Dropdown menuOptions={menuOptions} trigger="click" placement="bottom">
   <img src="../src/static/1.jpg" alt="" ref={imgRef} />
-</Tooltip>
+</Dropdown>
 
 {/* 添加两个按钮来演示手动控制 */}
-<div style={{ marginTop: '20px' }}>
-  <MyButton type="primary" onClick={handleManualShow}>显示 Tooltip</MyButton>
-  <MyButton type="danger" onClick={handleManualHide} style={{ marginLeft: '10px' }}>隐藏 Tooltip</MyButton>
-</div>
-   
+
     
   </div>
 
