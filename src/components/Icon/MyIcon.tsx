@@ -2,20 +2,23 @@ import React from "react";
 import {Icon} from '@iconify/react'
 import {MyIconProps} from './MyIcon'
 const MyIcon:React.FC<MyIconProps>=(MyIconProps)=>{
-  const {name,size=16,color,className,...restProps} =MyIconProps
+  const {name,size=16,color,className,onClick,...restProps} =MyIconProps
   return (
-    <Icon 
-    icon={`ep:${name.toLocaleLowerCase()}`}
-    // icon={`ep:${name.toLowerCase()}`} 
-    width={size} 
-    height={size} 
-    color={color}
-    style={{verticalAlign:'middle'}}
-    className={className}
-    {...restProps}
-    >
-   
+      <span onClick={onClick}>
+           <Icon
+               icon={`ep:${name.toLowerCase()}`}
+               // icon={`ep:${name.toLowerCase()}`}
+               width={size}
+               height={size}
+               color={color}
+               style={{verticalAlign:'middle'}}
+               className={className}
+               {...restProps}
+           >
+
     </Icon>
+      </span>
+
   )
 }
 export default MyIcon

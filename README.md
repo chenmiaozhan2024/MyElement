@@ -1,4 +1,4 @@
-# My React TypeScript App
+# MyElement
 
 这是一个基于 React + TypeScript + Vite 的组件库演练项目，实现了 MyButton 和 MyIcon 两个核心组件。
 

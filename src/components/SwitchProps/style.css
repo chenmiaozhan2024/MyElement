@@ -1,0 +1,83 @@
+.my-switch{
+    /*打开的颜色*/
+    --my-switch-on-color:var(--vk-color-primary);
+    /*  关闭的颜色*/
+    --my-switch-off-color:var(--vk-border-color);
+    --my-switch-on-border-color:var(--vk-color-primary);
+    --my-switch-off-border-color:var(--vk-border-color);
+}
+.my-switch{
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 20px;
+    height: 32px;
+    /*border:1px solid #efefef;*/
+    .my-switch_input{
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        margin:0;
+        &:focus-visible{
+            & ~ .my-switch_core {
+                outline: 2px solid var(--my-switch-on-color);
+                outline-offset: 1px;
+            }
+        }
+    }
+    &.is-checked{
+        .my-switch_core{
+            border-color: var(--my-switch-on-border-color);
+            background-color: var(--my-switch-on-color);
+            .my-switch_core-inner {
+                padding: 0 18px 0 4px;
+            }
+            .my-switch_core-active{
+                left: calc(100% - 17px);
+                /*right: 1px;*/
+            }
+        }
+    }
+}
+.my-switch_core{
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    height: 20px;
+    min-width: 40px;
+    border: 1px solid var(--my-switch-off-border-color);
+    outline: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: var(--my-switch-off-color);
+    cursor: pointer;
+    transition: border-color var(--vk-transition-duration),background-color var(--vk-transition-duration);
+    .my-switch_core-active{
+        position: absolute;
+        left: 1px;
+        border-radius: var(--vk-border-radius-circle);
+        width: 16px;
+        height: 16px;
+        background-color: var(--vk-color-white);
+        transition: all var(--vk-transition-duration);
+    }
+    .my-switch_core-inner{
+        width: 100%;
+        transition: all var(--vk-transition-duration);
+        height: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        padding: 0 4px 0 18px;
+        .vk-switch_core-inner-text {
+            font-size: 12px;
+            color: var(--vk-color-white);
+            user-select: none;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+}

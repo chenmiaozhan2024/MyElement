@@ -6,5 +6,5 @@ export interface MyIconProps {
   color?: string;
   className?: string;
   style?: React.CSSProperties;
-  onClick?: React.MouseEventHandler<SVGSVGElement>;
+ onClick?: React.MouseEventHandler<HTMLElement>;
 }

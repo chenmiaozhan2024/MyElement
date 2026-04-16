@@ -6,7 +6,10 @@ import {useEffect, useRef, useState,} from "react"
 import {  createPopper } from "@popperjs/core"
 import type { nameType } from "./components/Collapse/type.ts";
 // import Tooltip from "./components/Tooltip/Tooltip.tsx"
+import MySwitch from "./components/SwitchProps/SwitchProps.tsx";
 import Dropdown from "./components/Dropdown/Dropdown.tsx"
+// import Message from "../src/components/Message/Message.tsx";
+import {createMessage} from '../src/components/Message/method.ts'
 function App() {
  const buttonRef=useRef<HTMLButtonElement>(null)
  const imgRef = useRef<HTMLImageElement>(null)
@@ -15,19 +18,14 @@ function App() {
  const handleClick=()=>{
   console.log('我被点击了');
  }
-
-//  const handleManualShow = () => {
-//   // 手动显示 Tooltip
-//   tooltipRef.current?.show()
-//  }
-
-//  const handleManualHide = () => {
-//   // 手动隐藏 Tooltip
-//   tooltipRef.current?.hide()
-//  }
-
+  const [test,setTest]=useState('wrong')
 useEffect(()=>{
-  // ✅ 必须判断存在
+  createMessage({
+    message: '消息内容',
+    type: 'success',
+    during:0
+      }
+  )
   if (!imgRef.current || !h1Ref.current) return
 
   // ✅ 必须用 .current
@@ -68,7 +66,6 @@ const menuOptions=[ {
     display: 'inline-block',
     margin: '0 auto',    /* 水平居中 */
     textAlign: 'center', /* 文字/图片居中 */
-    width: '100%',      /* 占满父容器宽度 */
   }}>
 <Dropdown menuOptions={menuOptions} trigger="click" placement="bottom">
   <img src="../src/static/1.jpg" alt="" ref={imgRef} />
@@ -116,7 +113,7 @@ const menuOptions=[ {
     <MyButton type="warning" icon="Star"  circle={true}></MyButton>
     <MyButton type="danger" icon="Delete"  circle={true}></MyButton>
     <h2 style={{ height: '50px' }}>MyIcon组件测试</h2>
-    <MyIcon name="search" size="30px"></MyIcon>
+    <MyIcon name="search" size="30px" onClick={handleClick}></MyIcon>
     <MyIcon name="plus" color="#409eff" size="30px" />
     <h2 style={{ height: '50px' }}>MyCollapse组件测试</h2>
     <MyCollapse modelValue={openValue}  onUpdateModelValue={setOpenValue} accordion={true}>
@@ -135,7 +132,13 @@ const menuOptions=[ {
       <div>this is cccc test</div>
     </MyCollapseItem>
     </MyCollapse>
-
+      <h2 style={{ height: '50px' }}>MySwitch组件测试</h2>
+      <MySwitch></MySwitch>
+      <h2 style={{ height: '50px' }}>MySwitch组件inactiveValue和activeValue测试</h2>
+      <MySwitch activeValue={"right"} inactiveValue={"wrong"} modelValue={test} onUpdateModelValue={(value)=>setTest(value as string)}></MySwitch>
+      test is {test}
+      <h2 style={{ height: '50px' }}>MySwitch组件inactiveText和activeText测试</h2>
+      <MySwitch activeText={"ON"} inactiveText={"OFF"} modelValue={test} onUpdateModelValue={(value)=>setTest(value as string)}></MySwitch>
     </>
     
   )
