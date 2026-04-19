@@ -33,7 +33,7 @@ const MyCollapseItem:React.FC<CollapseItemProps>=(CollapseItemProps)=>{
         <span className="my-collapse-item__arrow">
           <MyIcon name="arrow-right" size="16px" />
         </span>
-      </div>
+      </div> 
       <div className={contentClasses} 
       id={`item-content-${name}`}
       > 

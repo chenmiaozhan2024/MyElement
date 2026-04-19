@@ -1,6 +1,6 @@
 # MyElement
 
-这是一个基于 React + TypeScript + Vite 的组件库演练项目，实现了 MyButton 和 MyIcon 两个核心组件。
+这是一个基于 React + TypeScript + Vite 的组件库项目目，实现了 MyButton 和 MyIcon，MyCollapse，MyDropdown,MyInput,MySwitch等多个组件。
 
 ## 技术栈
 
@@ -108,7 +108,8 @@ pnpm lint
 // 加载状态
 <MyButton type="primary" loading={true}>Loading</MyButton>
 ```
-
+#### MyButton效果
+![image.png](https://raw.githubusercontent.com/bucketio/img19/main/2026/04/19/1776610753842-e206283a-d646-43d4-a305-a46d48d47c89.png)
 ### MyIcon 组件
 
 #### 功能特性
@@ -129,16 +130,8 @@ pnpm lint
 // 大写图标名称（会自动转换为小写）
 <MyIcon name="Edit" size="20px"></MyIcon>
 ```
+![image.png](https://raw.githubusercontent.com/bucketio/img17/main/2026/04/19/1776610805176-176c0c8d-2ab8-485b-992e-fcf4784e0655.png)
 
-## 测试
-
-项目使用 Vitest 进行测试，测试文件位于各组件目录下的 `.test.tsx` 文件中。
-
-### 测试覆盖范围
-- 组件基本渲染
-- 组件属性和状态
-- 组件事件处理
-- 组件样式和类名
 
 ## 开发指南
 

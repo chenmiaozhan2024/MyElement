@@ -13,12 +13,8 @@ export interface CollapseProps{
   accordion?:boolean//是否打开手风琴模式
   onUpdateModelValue?: (values: nameType[]) => void;
   onChange?: (values: nameType[]) => void;
-}
+} 
 export interface CollapseContextType{
   activeNames:nameType[]
   handleItemClick:(name:nameType)=>void
-}
-export interface CollapseEmits{
-  (e:'update:modelValue',values:nameType[]):void
-  (e:'change',values:nameType[]):void
 }

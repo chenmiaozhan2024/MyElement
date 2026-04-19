@@ -26,7 +26,7 @@ const MyCollapse:React.FC<CollapseProps>=(CollapseProps)=>{
     setActiveNames(newActiveNames);
   
     onChange?.(newActiveNames);
-    onUpdateModelValue?.(newActiveNames);
+    onUpdateModelValue?.(newActiveNames); 
   };
   return (
     <CollapseContext.Provider value={{activeNames,handleItemClick}}>

@@ -116,7 +116,7 @@ const menuOptions=[ {
     <MyIcon name="search" size="30px" onClick={handleClick}></MyIcon>
     <MyIcon name="plus" color="#409eff" size="30px" />
     <h2 style={{ height: '50px' }}>MyCollapse组件测试</h2>
-    <MyCollapse modelValue={openValue}  onUpdateModelValue={setOpenValue} accordion={true}>
+    <MyCollapse modelValue={openValue}  onUpdateModelValue={setOpenValue} >
       <MyCollapseItem name="a" titleSlot={<h1>nice title</h1>}>
        <h1>headline title</h1>
        <div>this is content a aaa</div>
